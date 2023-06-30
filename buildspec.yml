@@ -18,7 +18,7 @@ phases:
       - mv target/bsl-project-1.0.jar .
       - unzip bsl-project-1.0.jar
       - rm -rf target tst src buildspec.yml pom.xml bsl-project-1.0.jar
-      - aws cloudformation package --template-file template.yaml --s3-bucket siva-lambda --output-template-file template-export.yml
+      - aws cloudformation package --template-file template.yaml --s3-bucket sample-lambda --output-template-file template-export.yml
   post_build:
     commands:
       # Do not remove this statement. This command is required for AWS CodeStar projects.

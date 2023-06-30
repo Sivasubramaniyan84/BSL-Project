@@ -4,9 +4,6 @@ Resources:
   SampleLambda:
     Type: AWS::Lambda::Function
     Properties:
-      Code:
-        S3Bucket: sample-lambda
-        S3Key: function.zip
       FunctionName: SampleLambda
       Handler: sample.Handler
       MemorySize: 128

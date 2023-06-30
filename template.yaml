@@ -9,7 +9,7 @@ Resources:
         S3Bucket: sample-lambda
         S3Key: bsl-project-1.0.jar
       Handler: sample.Handler
-      MemorySize: 128
+      MemorySize: 512
       Runtime: java11
       Role: !GetAtt ProcessingLambdaExecutionRole.Arn
   ProcessingLambdaExecutionRole:

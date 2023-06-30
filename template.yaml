@@ -5,6 +5,8 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: SampleLambda
+      Code:
+        S3Bucket: sample-lambda
       Handler: sample.Handler
       MemorySize: 128
       Runtime: java11

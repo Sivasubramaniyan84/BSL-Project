@@ -1,0 +1,6 @@
+{
+  "Tags":
+  {
+    "bslproject:projectArn":"arn:$PARTITION$:bslproject:$AWS_REGION$:$ACCOUNT_ID$:project/$PROJECT_ID$"
+  }
+}

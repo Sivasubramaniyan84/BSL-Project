@@ -6,7 +6,8 @@ Resources:
     Properties:
       FunctionName: SampleLambda
       Code:
-        ZipFile: ' '
+        S3Bucket: sample-lambda
+        S3Key: function.zip
       Handler: sample.Handler
       MemorySize: 128
       Runtime: java11

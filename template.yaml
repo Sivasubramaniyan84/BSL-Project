@@ -1,1 +1,34 @@
-
+AWSTemplateFormatVersion : 2010-09-09
+Description: Lambda Function
+Resources:
+  SampleLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: sample-lambda
+      FunctionName: function.zip
+      Handler: sample.Handler
+      MemorySize: 128
+      Runtime: java11
+      Role: !GetAtt ProcessingLambdaExecutionRole.Arn
+  ProcessingLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Policies:
+        - PolicyName: allowLogging
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:*
+                Resource: arn:aws:logs:*:*:*

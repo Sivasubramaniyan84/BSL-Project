@@ -11,6 +11,6 @@ public class RequestFunctionHandler implements RequestHandler <Map<String,String
 
     public String handleRequest(Map <String,String> values, Context context) {
         LOGGER.info("Inside handleRequest");
-        return "Invoking Lambda Functions - 789";
+        return "Invoking Lambda Functions - 123";
     }
 }

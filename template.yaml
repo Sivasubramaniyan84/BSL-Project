@@ -1,11 +1,16 @@
 AWSTemplateFormatVersion : 2010-09-09
 Description: Lambda Function
+Parameters:
+  BucketName:
+    Type: String
+    Default: siva-lambda-1
 Resources:
   Bucket:
     Type: AWS::S3::Bucket
     DependsOn: ProcessingLambdaPermission
     Properties:
-      BucketName: 'siva-lambda-1'
+      BucketName:
+        Ref: BucketName
       NotificationConfiguration:
         LambdaConfigurations:
         - Event: s3:ObjectCreated:*
@@ -38,7 +43,7 @@ Resources:
         Ref: SampleLambda
       Principal: s3.amazonaws.com
       SourceArn:
-        Fn::Sub: arn:aws:s3:::siva-lambda-1
+        Fn::Sub: arn:aws:s3:::${BucketName}
       SourceAccount:
         Ref: AWS::AccountId
   ProcessingLambdaExecutionRole:

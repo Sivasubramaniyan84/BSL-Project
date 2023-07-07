@@ -5,7 +5,7 @@ Resources:
     Type: AWS::S3::Bucket
     DependsOn: ProcessingLambdaPermission
     Properties:
-      BucketName: siva-lambda-1
+      BucketName: 'siva-lambda-1'
       NotificationConfiguration:
         LambdaConfigurations:
         - Event: s3:ObjectCreated:*

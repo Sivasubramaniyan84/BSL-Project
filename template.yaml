@@ -8,16 +8,16 @@ Resources:
       BucketName: siva-lambda-1
       NotificationConfiguration:
         LambdaConfigurations:
-          - Event: s3:ObjectCreated:*
-            Function:
-              Fn::GetAtt:
-                - SampleLambda
-                - Arn
-            Filter:
-              S3Key:
-                Rules:
-                  - Name: suffix
-                    Value: .txt
+        - Event: s3:ObjectCreated:*
+          Function:
+            Fn::GetAtt:
+              - SampleLambda
+              - Arn
+          Filter:
+            S3Key:
+              Rules:
+                - Name: suffix
+                  Value: .csv
 
   SampleLambda:
     Type: AWS::Lambda::Function
